@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+body{
+    user-select: none;
+    padding: 0px;
+    margin: 0px 0px;
+    height: 100svh;
+    width: 100svw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(35deg, skyblue,rgb(200, 237, 216) ,rgb(231, 241, 149));
+}
+#s{
+    height: calc(10svh + 10svw);
+    width: calc(10svh + 10svw); 
+    background-color: aliceblue;
+
+   border:2px solid rgb(59, 92, 242) ;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    cursor: pointer;
+    
+}
+
+#s:hover{
+    
+    border:2px solid gold ;
+     transition: 0.3s;
+}
+
+#base{
+    height: 50%;
+    width: 50%;
+    background-image: linear-gradient(25deg,purple,black);
+    font-size: 1.3em;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+   border-radius: 20px;
+   display: none;
+}
+
+#q{
+    max-height: 40%;
+    min-height: 20%;
+    width: 90%;
+    background-color:rgb(235, 239, 235) ;
+    border-radius: 20px;
+    margin: 3% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-wrap: break-word;
+   text-align: center;
+   text-overflow:unset;
+}
+
+.ans{
+    height: 55%;
+    width: 90%;
+   
+   
+   justify-content: center;
+    margin: 20px auto;
+}
+
+#o1, #o2, #o3, #o4{
+    height: 50%;
+    width: 40%;
+    border: 1px solid black;
+   display: flex;
+    margin:0 2%;
+    background-color: aliceblue;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.an1 div:hover, .an2 div:hover{
+    scale: 1.1;
+    box-shadow: 0px 0px 1px 2px yellow;
+    transition: 0.5s;
+}
+
+#q:hover{
+    box-shadow: 0px 0px 1px 3px red;
+    transition: 0.5s;
+}
+
+.an1 , .an2{
+    display: flex;
+    height: 50%;
+    width: 100%;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#res{
+    height: calc(20svh + 20svw);
+    width: calc(20svh + 20svw);; 
+    background-color: papayawhip;
+    border: 3px solid transparent;
+    animation: bo 2s 0s infinite forwards ease;
+    border-radius: 20px;
+    display: none;
+}
+
+@keyframes bo {
+    20%{
+        border-top: 3px solid blue;
+    }
+    40%{
+        border-right: 3px solid blue;
+    }
+    60%{
+        border-bottom: 3px solid blue;
+    }
+    80%{
+        border-left: 3px solid blue;
+    }
+}
+
+#poi{
+    height: 50%;
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid gold;
+    font-size: 2em;
+    font-style: oblique;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5% auto;
+}
+
+#emo{
+    height: 20%;
+    width: 60%;
+    background-color: rgb(244, 248, 248);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 12% auto;
+    text-align: center;
+}
+    </style>
+
+    <style>
+        @media screen and (max-width: 480px){
+            #base{
+                height: 70%;
+                width: 90%;
+                font-size: 1.3em;
+                font-family: 'Courier New', Courier, monospace;
+            }
+
+            #o1, #o2, #o3, #o4{
+               
+                width: 50%;
+                height: 70%;
+            }
+            .an1, .an2{
+                margin-top: 5%;
+                height: 30%;
+            
+            }
+            .an1{
+                margin-top: 25%;
+            }
+
+            #q{
+                max-height: 40%;
+                min-height: 20%;
+                margin-top: 15%;
+            }
+
+            #s{
+                height: calc(12svh + 12svw);
+                width: calc(12svh + 12svw);
+                scale: 1.2;
+            }
+
+            #res{
+                scale: 1.2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="s">START</div>
+    <div id="base">
+        <div id="q"></div>
+        <div class="ans">
+            <div class="an1"> <div id="o1" onclick="next(1)"></div>
+            <div id="o2" onclick="next(2)"></div></div>
+           
+<div class="an2"> <div id="o3" onclick="next(3)"></div>
+            <div id="o4" onclick="next(4)"></div></div>
+           
+        </div>
+    </div>
+  <div id="res">
+    <div id="poi"> 100</div>
+    <div id="emo">well done</div>
+  </div>
+    <script>
+        let q=document.getElementById('q');
+        let o1=document.getElementById('o1');
+        let o2=document.getElementById('o2');
+        let o3=document.getElementById('o3');
+        let o4=document.getElementById('o4');
+        let s=document.getElementById('s');
+        let base=document.getElementById('base');
+        let res=document.getElementById('res');
+        let poi=document.getElementById('poi');
+        let emo=document.getElementById('emo');
+
+
+        s.addEventListener('click',function(){
+               s.style.display="none";
+               base.style.display="block";
+               next(0);
+
+        });
+
+        let que=["what is angle between adjusent numbers in a clock?","Which disease is caused due to the lack of vitamin C?","Which country has highest population?","11th president of India--"];
+        let ans=["20", "15", "30", "25","Anemia", "Cholera", "blindness", "Scurvy","India","China","Africa","Canada","Droupadi murmu","Ram Nath Kovind", "Pratibha Patil","A.P.J Abdul Kalam"];
+
+        var qc=0, ac=0, t=0;
+        let ma=[0], m=0, rm=[0,2,4,1,4];
+
+        function next(x)
+        {
+             q.innerHTML=que[qc++];
+             o1.innerHTML=ans[ac++];
+             o2.innerHTML=ans[ac++];
+             o3.innerHTML=ans[ac++];
+             o4.innerHTML=ans[ac++];
+             ma[m++]=x;
+
+             if(m==5)
+             {
+                final();
+             }
+        }
+
+        function final()
+        {
+            for(var i=1;i<5;i++)
+            {
+                if(ma[i]==rm[i])
+                 {
+                    t+=25;
+                 }
+            }
+
+            var txt;
+            
+            if(t<=50 && t>0)
+            {
+               txt="Better luck next!👍";
+            }
+            else if(t>50 && t<100)
+            {
+                txt="Well try!😊";
+            }
+            else if(t==100)
+            {
+                txt="Amazing!🎉";
+            }
+            else{
+                txt="not good!😔";
+            }
+            base.style.display="none";
+            res.style.display="block";
+            poi.innerHTML=t+"%";
+            emo.innerHTML=txt;
+
+
+        }
+       
+    </script>
+</body>
+</html>
